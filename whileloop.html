@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>JavaScript While Loop</h2>
+
+    <p id="number"></p>
+    <p id="msg"></p>
+
+    <script>
+      var text = "";
+      var i = 0;
+
+      while (i < 10) {
+        text = text + "<br>The Number is: " + i;
+        i++;
+      }
+
+      document.getElementById("number").innerHTML = text;
+      document.getElementById(
+        "msg"
+      ).innerHTML = `The Value of i outside While Loop = ${i}`;
+    </script>
+  </body>
+</html>
