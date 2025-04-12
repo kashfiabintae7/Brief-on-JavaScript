@@ -2,26 +2,46 @@
 <html lang="en">
   <head>
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h2>JavaScript While Loop</h2>
+    <h1 aria-label="JavaScript While Loop"></h1>
 
-    <p id="number"></p>
+    <p class="grad1" id="number" style="padding: 20px"></p>
     <p id="msg"></p>
+
+    <p class="grad2" id="letters" style="padding: 20px"></p>
+    <p id="msgtwo"></p>
 
     <script>
       var text = "";
       var i = 0;
 
-      while (i < 10) {
+      while (i < 20) {
         text = text + "<br>The Number is: " + i;
+        i++;
+      }
+
+      var text2 = "";
+      var i = 0;
+
+      while (i < 20) {
+        var randomChar = String.fromCharCode(
+          97 + Math.floor(Math.random() * 26)
+        );
+        text2 += "<br>Random Letter: " + randomChar;
         i++;
       }
 
       document.getElementById("number").innerHTML = text;
       document.getElementById(
         "msg"
-      ).innerHTML = `The Value of i outside While Loop = ${i}`;
+      ).innerHTML = `<h3>The Value of i outside While Loop = ${i}</h3>`;
+
+      document.getElementById("letters").innerHTML = text2;
+      document.getElementById(
+        "msgtwo"
+      ).innerHTML = `<h3>Total Letters Generated = ${i}</h3>`;
     </script>
   </body>
 </html>

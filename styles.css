@@ -1,0 +1,103 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: steelblue
+    url(https://images.unsplash.com/photo-1445112098124-3e76dd67983c?&w=1920&h=1080&fit=crop)
+    no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+h1 {
+  position: fixed;
+  font-style: italic;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 130px;
+  font-weight: 700px;
+  color: lightcyan;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  perspective: 500px;
+  top: 200px;
+}
+
+h1::before,
+h1::after {
+  content: attr(aria-label);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  text-shadow: 0.01em 0.01em 0.01em black;
+}
+
+h1::before {
+  animation: floatAbove 3.5s ease-in-out infinite;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+}
+
+h1::after {
+  opacity: 0.65;
+  filter: blur(0.02em);
+  transform: translate(-50%, -50%) rotateX(21deg);
+  animation: floatBelow 3.5s ease-in-out infinite;
+  -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+
+@keyframes floatAbove {
+  50% {
+    transform: translate(-50%, -60%);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
+  }
+}
+
+@keyframes floatBelow {
+  50% {
+    transform: translate(-50%, -60%) rotateX(10deg);
+    -webkit-clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
+  }
+}
+
+.grad1 {
+  font-family: Georgia;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 5%;
+  background: linear-gradient(
+    to right,
+    midnightblue,
+    dodgerblue,
+    lightskyblue,
+    lightcyan
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 200px;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
+.grad2 {
+  font-family: Georgia;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 5%;
+  background: linear-gradient(to right, lightcyan, lightgrey, darkgrey, black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 200px;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
+h3 {
+  font-size: 22px;
+  color: white;
+  text-shadow: 4px 3px 20px white;
+}
